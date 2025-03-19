@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Crumbs Bakery</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bakeryBrown: 'rgb(77 51 32)',
+                        bakeryCream: '#FFF8F0',
+                        bakeryTan: 'rgb(180 146 101)',
+                        bakeryGold: '#FFDAB9',
+                        bakeryDark: '#5C4033',
+                        bakeryproduct:"rgb(43 28 17)"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-bakeryCream text-bakeryDark">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full bg-bakeryBrown text-bakeryCream flex justify-between items-center px-5 md:px-8 py-4 z-50 shadow sticky top-0">
+        <div class="text-xl font-bold cursor-pointer">Cozy Crumbs</div>
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="#hero" class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Home</a></li>
+            <li><a href="#about" class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">About Us</a>
+            </li>
+            <li><a href="#products"
+                    class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Products</a></li>
+            <li><a href="#testimonials"
+                    class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Testimonials</a></li>
+            <li><a href="#contact" class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="hero"
+        class="min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center text-bakeryCream pt-24 px-4"
+        style="background-image: url('./bakerybg.jpg');">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Welcome to Cozy Crumbs Bakery</h1>
+        <p class="text-lg md:text-xl mb-6">Freshly baked goods made with love and tradition.</p>
+        <a href="#contact"
+            class="bg-bakeryDark px-6 py-3 rounded text-bakeryCream hover:bg-bakeryBrown transition text-lg">Visit
+            Us</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 px-4 md:px-6 max-w-4xl mx-auto opacity-0 transition-opacity duration-700" data-animate>
+        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-6">About Us</h2>
+        <p class="text-center text-base md:text-lg leading-relaxed mb-4">
+            At Cozy Crumbs Bakery, we've been your neighborhood bakery since 1990. Our passion for artisanal baking started with a family recipe and grew into a community favorite. 
+        </p>
+        <p class="text-center text-base md:text-lg leading-relaxed mb-4">
+            We bake everything fresh daily, using locally sourced ingredients and traditional methods passed down through generations. From our rustic sourdoughs to sweet pastries, every bite tells a story of love and craftsmanship.
+        </p>
+        <p class="text-center text-base md:text-lg leading-relaxed">
+            Our mission is to create a warm, welcoming space where families and friends gather, celebrate, and enjoy delicious baked goods made with heart.
+        </p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-300 bg-bakeryproduct" data-animate>
+        <h2 class="text-3xl md:text-4xl font-semibold text-bakeryCream text-center mb-10">Our Popular Treats</h2>
+        <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            <!-- Product Card -->
+            <div
+                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
+                <img src="./bakery1.jpg" alt="Sourdough Bread" class="mx-auto mb-4 rounded w-full h-[233px]">
+                <h3 class="text-xl font-semibold mb-2">Sourdough Bread</h3>
+                <p>Crusty on the outside, soft on the inside, made fresh daily.</p>
+            </div>
+            <div
+                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300 bg-bakeryCream">
+                <img src="./bakery2.jpg" alt="Chocolate Croissant" class="mx-auto mb-4 rounded w-full h-[233px]">
+                <h3 class="text-xl font-semibold mb-2">Chocolate Croissant</h3>
+                <p>Flaky pastry filled with rich dark chocolate.</p>
+            </div>
+            <div
+                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300 bg-bakeryCream">
+                <img src="./bakery3.jpg" alt="Cinnamon Roll" class="mx-auto mb-4 rounded w-full h-[233px]">
+                <h3 class="text-xl font-semibold mb-2">Cinnamon Roll</h3>
+                <p>Swirled with cinnamon and topped with creamy icing.</p>
+            </div>
+            <div
+                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
+                <img src="./bakery4.jpg" alt="Cupcakes" class="mx-auto mb-4 rounded w-full h-[233px]">
+                <h3 class="text-xl font-semibold mb-2">Assorted Cupcakes</h3>
+                <p>A variety of flavors, perfect for any celebration.</p>
+            </div>
+            <div class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
+                <img src="./bakery5.jpg" alt="Lemon Tart" class="mx-auto mb-4 rounded  w-full h-[233px]">
+                <h3 class="text-xl font-semibold mb-2">Lemon Tart</h3>
+                <p>Sweet and tangy with a buttery crust and fresh lemon curd.</p>
+            </div>
+            <div class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
+                <img src="./bakery6.jpg" alt="Rustic Apple Pie" class="mx-auto mb-4 rounded  w-full h-[233px]">
+                <h3 class="text-xl font-semibold mb-2">Rustic Apple Pie</h3>
+                <p>Classic apple pie with spiced filling and golden flaky crust.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700" data-animate>
+        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-10">What Our Customers Say</h2>
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto">
+            <div
+                class="bg-bakeryTan p-6 rounded shadow text-center transform transition hover:scale-105 hover:shadow-xl duration-300 cursor-pointer">
+                <p class="text-bakeryCream">"The best bakery in town! Always fresh and delicious!"</p>
+                <h4 class="mt-4 font-bold">- Sarah M.</h4>
+            </div>
+            <div
+                class="bg-bakeryTan p-6 rounded shadow text-center transform transition hover:scale-105 hover:shadow-xl duration-300 cursor-pointer">
+                <p class="text-bakeryCream">"Cozy Crumbs feels like home. Their sourdough is unbeatable."</p>
+                <h4 class="mt-4 font-bold">- Daniel K.</h4>
+            </div>
+            <div
+                class="bg-bakeryTan p-6 rounded shadow text-center transform transition hover:scale-105 hover:shadow-xl duration-300 cursor-pointer">
+                <p class="text-bakeryCream ">"I love stopping by for coffee and a cinnamon roll every weekend!"</p>
+                <h4 class="mt-4 font-bold">- Lisa P.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700 bg-bakeryproduct" data-animate>
+        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-10 text-bakeryCream">Contact Us</h2>
+        <form id="contact-form" class="flex flex-col gap-4 max-w-lg mx-auto">
+            <input type="text" id="name" name="name" placeholder="Your Name" required
+                class="p-3 rounded border border-bakeryBrown w-full">
+            <input type="email" id="email" name="email" placeholder="Your Email" required
+                class="p-3 rounded border border-bakeryBrown w-full">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required
+                class="p-3 rounded border border-bakeryBrown w-full"></textarea>
+            <button type="submit"
+                class="bg-bakeryDark text-bakeryCream py-2 rounded hover:bg-bakeryBrown transition">Send
+                Message</button>
+        </form>
+        <div class="bg-gray-300 h-48 mt-6 flex items-center justify-center">
+            <p>Google Maps Placeholder</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bakeryBrown text-bakeryCream text-center py-6 mt-10">
+        <div class="flex items-center justify-around">
+            <p class="text-xl text-bakeryGold">Business Hours: Mon - Sat | 7am - 6pm</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:underline text-bakeryGold">Facebook</a>
+                <a href="#" class="hover:underline text-bakeryGold">Instagram</a>
+                <a href="#" class="hover:underline text-bakeryGold">Twitter</a>
+            </div>
+        </div>
+        <p class="mt-5 flex items-center justify-start pl-6">&copy; 2025 Cozy Crumbs Bakery. All rights reserved.</p>
+    </footer>
+
+
+    <!-- Smooth scroll and animation JS -->
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                e.preventDefault();
+            }
+        });
+
+        const elements = document.querySelectorAll('[data-animate]');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        elements.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
