@@ -1,19 +1,6 @@
-
-.text-bakeryDark{
-    color: #5C4033;
-}
-.text-bakeryCream{
-    color: #FFF8F0;
-}
-.text-bakeryGold{
-    color: #FFDAB9;
-}
-.bg-bakeryDark{
-    background-color: #5C4033;
-}
-.bg-bakeryBrown{
-    background-color: #8B5E3C;
-}
-.bg-bakeryTan{
-    background-color: #FAEBD7;
+@media (max-width: 768px) {
+    .business{
+        font-size: 1px;
+    }
+    
 }
