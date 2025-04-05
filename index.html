@@ -17,7 +17,7 @@
                         bakeryTan: 'rgb(180 146 101)',
                         bakeryGold: '#FFDAB9',
                         bakeryDark: '#5C4033',
-                        bakeryproduct:"rgb(43 28 17)"
+                        bakeryproduct: "rgb(43 28 17)"
                     }
                 }
             }
@@ -25,6 +25,7 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
+<link rel="stylesheet" href="output.css">
 
 <body class="bg-bakeryCream text-bakeryDark">
 
@@ -56,21 +57,27 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-16 px-4 md:px-6 max-w-4xl mx-auto opacity-0 transition-opacity duration-700" data-animate>
+    <section id="about" class="py-16 px-4 md:px-6 max-w-4xl mx-auto opacity-0 transition-opacity duration-700"
+        data-animate>
         <h2 class="text-3xl md:text-4xl font-semibold text-center mb-6">About Us</h2>
         <p class="text-center text-base md:text-lg leading-relaxed mb-4">
-            At Cozy Crumbs Bakery, we've been your neighborhood bakery since 1990. Our passion for artisanal baking started with a family recipe and grew into a community favorite. 
+            At Cozy Crumbs Bakery, we've been your neighborhood bakery since 1990. Our passion for artisanal baking
+            started with a family recipe and grew into a community favorite.
         </p>
         <p class="text-center text-base md:text-lg leading-relaxed mb-4">
-            We bake everything fresh daily, using locally sourced ingredients and traditional methods passed down through generations. From our rustic sourdoughs to sweet pastries, every bite tells a story of love and craftsmanship.
+            We bake everything fresh daily, using locally sourced ingredients and traditional methods passed down
+            through generations. From our rustic sourdoughs to sweet pastries, every bite tells a story of love and
+            craftsmanship.
         </p>
         <p class="text-center text-base md:text-lg leading-relaxed">
-            Our mission is to create a warm, welcoming space where families and friends gather, celebrate, and enjoy delicious baked goods made with heart.
+            Our mission is to create a warm, welcoming space where families and friends gather, celebrate, and enjoy
+            delicious baked goods made with heart.
         </p>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-300 bg-bakeryproduct" data-animate>
+    <section id="products" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700 bg-bakeryproduct"
+        data-animate>
         <h2 class="text-3xl md:text-4xl font-semibold text-bakeryCream text-center mb-10">Our Popular Treats</h2>
         <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             <!-- Product Card -->
@@ -98,12 +105,14 @@
                 <h3 class="text-xl font-semibold mb-2">Assorted Cupcakes</h3>
                 <p>A variety of flavors, perfect for any celebration.</p>
             </div>
-            <div class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
+            <div
+                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
                 <img src="./bakery5.jpg" alt="Lemon Tart" class="mx-auto mb-4 rounded  w-full h-[233px]">
                 <h3 class="text-xl font-semibold mb-2">Lemon Tart</h3>
                 <p>Sweet and tangy with a buttery crust and fresh lemon curd.</p>
             </div>
-            <div class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
+            <div
+                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
                 <img src="./bakery6.jpg" alt="Rustic Apple Pie" class="mx-auto mb-4 rounded  w-full h-[233px]">
                 <h3 class="text-xl font-semibold mb-2">Rustic Apple Pie</h3>
                 <p>Classic apple pie with spiced filling and golden flaky crust.</p>
@@ -133,15 +142,19 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700 bg-bakeryproduct" data-animate>
+    <section id="contact" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700 bg-bakeryproduct"
+        data-animate>
         <h2 class="text-3xl md:text-4xl font-semibold text-center mb-10 text-bakeryCream">Contact Us</h2>
-        <form id="contact-form" class="flex flex-col gap-4 max-w-lg mx-auto">
+        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form"
+            class="flex flex-col gap-4 max-w-lg mx-auto">
+            <input type="hidden" name="access_key" value="e59c2c93-8e5b-4298-84f7-670507c3c556">
+            <input type="hidden" name="redirect" value="http://127.0.0.1:3000/Bakery/style.html">
             <input type="text" id="name" name="name" placeholder="Your Name" required
-                class="p-3 rounded border border-bakeryBrown w-full">
+                class="p-3 rounded border border-bakeryBrown w-full text-white">
             <input type="email" id="email" name="email" placeholder="Your Email" required
-                class="p-3 rounded border border-bakeryBrown w-full">
+                class="p-3 rounded border border-bakeryBrown w-full text-white">
             <textarea id="message" name="message" rows="5" placeholder="Your Message" required
-                class="p-3 rounded border border-bakeryBrown w-full"></textarea>
+                class="p-3 rounded border border-bakeryBrown w-full text-white"></textarea>
             <button type="submit"
                 class="bg-bakeryDark text-bakeryCream py-2 rounded hover:bg-bakeryBrown transition">Send
                 Message</button>

@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @media (max-width: 768px) {
     .business{
         font-size: 1px;
