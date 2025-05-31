@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Cozy Crumbs Bakery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-amber-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <i class="fas fa-birthday-cake text-2xl text-amber-600 mr-2"></i>
+                    <span class="text-xl font-bold text-amber-800">Cozy Crumbs Bakery</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="about.html" class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">About</a>
+                        <a href="products.html" class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Products</a>
+                        <a href="testimonials.html" class="bg-amber-600 text-white px-3 py-2 rounded-md text-sm font-medium">Testimonials</a>
+                        <a href="contact.html" class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-amber-700 hover:text-amber-900 focus:outline-none focus:text-amber-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-amber-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html" class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="products.html" class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="testimonials.html" class="bg-amber-600 text-white block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="contact.html" class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner relative bg-gradient-to-r from-amber-100 to-orange-100 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-amber-800 mb-4">What Our Customers Say</h1>
+            <p class="text-xl text-amber-700 max-w-2xl mx-auto">Don't just take our word for it - hear from our amazing customers who keep coming back for more</p>
+            <div class="mt-8">
+                <i class="fas fa-heart text-6xl text-red-500"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Grid -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reviews-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Customer Reviews</h2>
+                <p class="text-lg text-amber-700 max-w-2xl mx-auto">Real reviews from real customers who love what we do</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card bg-amber-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-300 to-purple-300 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-2xl text-white"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-amber-800">Sarah Mitchell</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-amber-700 italic">"The best bakery in town! Their sourdough bread is absolutely incredible, and the staff is always so friendly. I come here every Saturday morning for fresh croissants and coffee. Cozy Crumbs has become a weekly tradition for our family!"</p>
+                    <div class="mt-4 text-sm text-amber-600">
+                        <i class="fas fa-calendar mr-2"></i>2 weeks ago
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card bg-amber-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-300 to-green-300 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-2xl text-white"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-amber-800">Michael Chen</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-amber-700 italic">"Ordered a custom wedding cake from Cozy Crumbs and it exceeded all expectations! Not only did it look stunning, but it tasted even better. The attention to detail was amazing and all our guests kept asking where we got it from. Highly recommend!"</p>
+                    <div class="mt-4 text-sm text-amber-600">
+                        <i class="fas fa-calendar mr-2"></i>1 month ago
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card bg-amber-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-300 to-red-300 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-2xl text-white"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-amber-800">Emily Rodriguez</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-amber-700 italic">"I'm gluten-free and finding good bakery items has always been a challenge. Cozy Crumbs has an amazing selection of gluten-free options that actually taste incredible! Their GF chocolate cupcakes are to die for. Thank you for being so inclusive!"</p>
+                    <div class="mt-4 text-sm text-amber-600">
+                        <i class="fas fa-calendar mr-2"></i>3 weeks ago
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card bg-amber-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-2xl text-white"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-amber-800">David Thompson</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-amber-700 italic">"As a local business owner, I appreciate supporting other local businesses. Cozy Crumbs provides all our office catering needs. Their pastry platters are always a hit at meetings and the service is professional and reliable. Great partnership!"</p>
+                    <div class="mt-4 text-sm text-amber-600">
+                        <i class="fas fa-calendar mr-2"></i>2 weeks ago
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card bg-amber-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-300 to-blue-300 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-2xl text-white"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-amber-800">Lisa Parker</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-amber-700 italic">"My kids absolutely love the birthday cakes from Cozy Crumbs! We've had three birthday parties this year and each cake was more beautiful and delicious than the last. The decorating skills are amazing and they really listen to what you want."</p>
+                    <div class="mt-4 text-sm text-amber-600">
+                        <i class="fas fa-calendar mr-2"></i>1 week ago
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card bg-amber-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-2xl text-white"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-amber-800">Robert Johnson</h3>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-amber-700 italic">"Retired and living nearby, I stop by Cozy Crumbs almost daily for coffee and a pastry. The atmosphere is warm and welcoming, and I've gotten to know the staff who always remember my order. It's like having a second home!"</p>
+                    <div class="mt-4 text-sm text-amber-600">
+                        <i class="fas fa-calendar mr-2"></i>4 days ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google & Yelp Highlights -->
+    <section class="py-16 bg-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 ratings-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Our Online Ratings</h2>
+                <p class="text-lg text-amber-700 max-w-2xl mx-auto">See what customers are saying about us across different platforms</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Google Reviews -->
+                <div class="rating-card bg-white rounded-lg p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                    <i class="fab fa-google text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">Google Reviews</h3>
+                    <div class="flex justify-center text-yellow-400 text-2xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-amber-600 mb-2">4.9/5</p>
+                    <p class="text-amber-700">Based on 247 reviews</p>
+                </div>
+
+                <!-- Yelp Reviews -->
+                <div class="rating-card bg-white rounded-lg p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                    <i class="fab fa-yelp text-4xl text-red-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">Yelp Reviews</h3>
+                    <div class="flex justify-center text-yellow-400 text-2xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-amber-600 mb-2">4.8/5</p>
+                    <p class="text-amber-700">Based on 189 reviews</p>
+                </div>
+
+                <!-- Facebook Reviews -->
+                <div class="rating-card bg-white rounded-lg p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                    <i class="fab fa-facebook text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">Facebook Reviews</h3>
+                    <div class="flex justify-center text-yellow-400 text-2xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-amber-600 mb-2">4.9/5</p>
+                    <p class="text-amber-700">Based on 156 reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Testimonials Carousel -->
+     <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 video-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Video Testimonials</h2>
+                <p class="text-lg text-amber-700 max-w-2xl mx-auto">Watch our customers share their experiences</p>
+            </div>
+            
+            <div class="relative">
+                <div class="overflow-hidden rounded-lg">
+                    <div id="testimonial-carousel" class="flex transition-transform duration-500 ease-in-out" style="width: 300%;">
+                        <!-- Video Testimonial 1 -->
+                        <div class="testimonial-slide w-full flex-shrink-0" style="width: 33.333%;">
+                            <div class="bg-amber-50 rounded-lg p-8 text-center mx-2">
+                                <div class="w-32 h-32 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                    <i class="fas fa-play text-4xl text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-amber-800 mb-4">Maria's Wedding Story</h3>
+                                <p class="text-amber-700 mb-6">"Watch how Cozy Crumbs made my wedding day perfect with their stunning three-tier cake and amazing service. From the first consultation to the final delivery, everything was flawless!"</p>
+                                <button class="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700 transition-colors duration-300">
+                                    <i class="fas fa-play mr-2"></i>Watch Video
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Video Testimonial 2 -->
+                        <div class="testimonial-slide w-full flex-shrink-0" style="width: 33.333%;">
+                            <div class="bg-amber-50 rounded-lg p-8 text-center mx-2">
+                                <div class="w-32 h-32 bg-gradient-to-br from-blue-300 to-green-300 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                    <i class="fas fa-play text-4xl text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-amber-800 mb-4">Tom's Daily Visit</h3>
+                                <p class="text-amber-700 mb-6">"As a regular customer for over 5 years, I can confidently say that Cozy Crumbs is the heart of our community. Their consistency and quality never fail to impress me."</p>
+                                <button class="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700 transition-colors duration-300">
+                                    <i class="fas fa-play mr-2"></i>Watch Video
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Video Testimonial 3 -->
+                        <div class="testimonial-slide w-full flex-shrink-0" style="width: 33.333%;">
+                            <div class="bg-amber-50 rounded-lg p-8 text-center mx-2">
+                                <div class="w-32 h-32 bg-gradient-to-br from-orange-300 to-red-300 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                    <i class="fas fa-play text-4xl text-white"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-amber-800 mb-4">Jessica's Birthday Surprise</h3>
+                                <p class="text-amber-700 mb-6">"See how Cozy Crumbs helped me surprise my daughter with the most amazing unicorn birthday cake. The look on her face was priceless, and the cake was absolutely delicious!"</p>
+                                <button class="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700 transition-colors duration-300">
+                                    <i class="fas fa-play mr-2"></i>Watch Video
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <button id="prev-btn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-left text-amber-600"></i>
+                </button>
+                <button id="next-btn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-right text-amber-600"></i>
+                </button>
+
+                <!-- Carousel Indicators -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-amber-600 transition-all duration-300"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-amber-300 transition-all duration-300"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-amber-300 transition-all duration-300"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Write Your Own Review -->
+    <section class="py-16 bg-gradient-to-r from-amber-100 to-orange-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 review-form-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Write Your Own Review</h2>
+                <p class="text-lg text-amber-700 max-w-2xl mx-auto">We'd love to hear about your experience at Cozy Crumbs Bakery</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <form class="space-y-6">
+                    <!-- Name and Email -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-amber-800 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-amber-800 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <!-- Rating -->
+                    <div>
+                        <label class="block text-sm font-medium text-amber-800 mb-2">Your Rating</label>
+                        <div class="flex space-x-2">
+                            <button type="button" class="rating-star text-3xl text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="rating-star text-3xl text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="rating-star text-3xl text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="rating-star text-3xl text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="rating-star text-3xl text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Review Title -->
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-amber-800 mb-2">Review Title</label>
+                        <input type="text" id="title" name="title" class="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Give your review a title">
+                    </div>
+
+                    <!-- Review Text -->
+                    <div>
+                        <label for="review" class="block text-sm font-medium text-amber-800 mb-2">Your Review</label>
+                        <textarea id="review" name="review" rows="6" class="w-full px-4 py-3 border border-amber-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Tell us about your experience..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="bg-amber-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-amber-700 transition-colors duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Submit Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-amber-100 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-birthday-cake text-2xl text-amber-300 mr-3"></i>
+                        <span class="text-xl font-bold">Cozy Crumbs</span>
+                    </div>
+                    <p class="text-amber-200">Handcrafted with love since 1990. Your neighborhood bakery for all of life's sweet moments.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-amber-300 transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-300 transition-colors duration-300">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-amber-300 transition-colors duration-300">Products</a></li>
+                        <li><a href="testimonials.html" class="hover:text-amber-300 transition-colors duration-300">Reviews</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200">Contact Info</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-CAKE</li>
+                        <li><i class="fas fa-envelope mr-2"></i>hello@cozycrumbs.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Main Street, Sweet Town</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200">Follow Us</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Cozy Crumbs Bakery. All rights reserved. Made with 🤎 and lots of flour.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero banner animation
+        gsap.fromTo('.hero-banner h1', 
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+        );
+
+        gsap.fromTo('.hero-banner p', 
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 1, delay: 0.3, ease: "power2.out" }
+        );
+
+        gsap.fromTo('.hero-banner .fa-heart', 
+            { opacity: 0, scale: 0.5 },
+            { opacity: 1, scale: 1, duration: 1, delay: 0.6, ease: "back.out(1.7)" }
+        );
+
+        // Review cards animation
+        gsap.fromTo('.review-card', 
+            { opacity: 0, y: 50 },
+            { 
+                opacity: 1, 
+                y: 0, 
+                duration: 0.8, 
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: '.reviews-section',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Rating cards animation
+        gsap.fromTo('.rating-card', 
+            { opacity: 0, scale: 0.8 },
+            { 
+                opacity: 1, 
+                scale: 1, 
+                duration: 0.8, 
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: '.ratings-section',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Video section animation
+        gsap.fromTo('.video-section', 
+            { opacity: 0, y: 30 },
+            { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.video-section',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Review form animation
+        gsap.fromTo('.review-form-section', 
+            { opacity: 0, y: 30 },
+            { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.review-form-section',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            }
+        );
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Testimonial carousel functionality
+        const carousel = document.getElementById('testimonial-carousel');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        let currentSlide = 0;
+        
+        function updateCarousel() {
+            const translateX = -(currentSlide * (100 / slides.length));
+            carousel.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('bg-amber-300');
+                    dot.classList.add('bg-amber-600');
+                } else {
+                    dot.classList.remove('bg-amber-600');
+                    dot.classList.add('bg-amber-300');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Add click functionality to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+        
+        // Auto-play carousel
+        let autoPlayInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-play on hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+        
+        // Resume auto-play when mouse leaves
+        carousel.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Star rating functionality
+        const ratingStars = document.querySelectorAll('.rating-star');
+        let currentRating = 0;
+
+        ratingStars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                currentRating = index + 1;
+                updateStarDisplay();
+            });
+
+            star.addEventListener('mouseenter', () => {
+                highlightStars(index + 1);
+            });
+        });
+
+        function updateStarDisplay() {
+            ratingStars.forEach((star, index) => {
+                if (index < currentRating) {
+                    star.classList.remove('text-gray-300');
+                    star.classList.add('text-yellow-400');
+                } else {
+                    star.classList.remove('text-yellow-400');
+                    star.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        function highlightStars(count) {
+            ratingStars.forEach((star, index) => {
+                if (index < count) {
+                    star.classList.remove('text-gray-300');
+                    star.classList.add('text-yellow-400');
+                } else {
+                    star.classList.remove('text-yellow-400');
+                    star.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        // Reset stars on mouse leave
+        document.querySelector('.flex.space-x-2').addEventListener('mouseleave', () => {
+            updateStarDisplay();
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const title = document.getElementById('title').value;
+            const review = document.getElementById('review').value;
+            
+            if (!name || !email || !title || !review || currentRating === 0) {
+                alert('Please fill in all fields and select a rating.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your review! We appreciate your feedback.');
+            
+            // Reset form
+            document.querySelector('form').reset();
+            currentRating = 0;
+            updateStarDisplay();
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover animations to review cards
+        document.querySelectorAll('.review-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, { scale: 1.02, duration: 0.3, ease: "power2.out" });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { scale: 1, duration: 0.3, ease: "power2.out" });
+            });
+        });
+
+        // Add hover animations to rating cards
+        document.querySelectorAll('.rating-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, { y: -5, duration: 0.3, ease: "power2.out" });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+            });
+        });
+
+        // Floating heart animation
+        gsap.to('.hero-banner .fa-heart', {
+            y: -10,
+            duration: 2,
+            ease: "power2.inOut",
+            yoyo: true,
+            repeat: -1
+        });
+    </script>
+</body>
+</html>

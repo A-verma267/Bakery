@@ -1,215 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cozy Crumbs Bakery</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Cozy Crumbs Bakery - Fresh Baked Daily</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        bakeryBrown: 'rgb(77 51 32)',
-                        bakeryCream: '#FFF8F0',
-                        bakeryTan: 'rgb(180 146 101)',
-                        bakeryGold: '#FFDAB9',
-                        bakeryDark: '#5C4033',
-                        bakeryproduct: "rgb(43 28 17)"
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<link rel="stylesheet" href="output.css">
+<body class="bg-amber-50 ">
+    
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <i class="fas fa-birthday-cake text-2xl text-amber-600 mr-2"></i>
+                    <span class="text-xl font-bold text-amber-800">Cozy Crumbs Bakery</span>
+                </div>
 
-<body class="bg-bakeryCream text-bakeryDark">
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html"
+                            class="bg-amber-600 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="about.html"
+                            class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">About</a>
+                        <a href="products.html"
+                            class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Products</a>
+                        <a href="testimonials.html"
+                            class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Testimonials</a>
+                        <a href="contact.html"
+                            class="text-amber-700 hover:text-amber-900 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
 
-    <!-- Navbar -->
-    <nav
-        class="fixed w-full bg-bakeryBrown text-bakeryCream flex justify-between items-center px-5 md:px-8 py-4 z-50 shadow sticky top-0">
-        <div class="text-xl font-bold cursor-pointer">Cozy Crumbs</div>
-        <ul class="hidden md:flex space-x-6">
-            <li><a href="#hero" class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Home</a></li>
-            <li><a href="#about" class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">About Us</a>
-            </li>
-            <li><a href="#products"
-                    class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Products</a></li>
-            <li><a href="#testimonials"
-                    class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Testimonials</a></li>
-            <li><a href="#contact" class="text-base font-semibold px-2.5  hover:text-bakeryGold transition">Contact</a>
-            </li>
-        </ul>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn"
+                        class="text-amber-700 hover:text-amber-900 focus:outline-none focus:text-amber-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-amber-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="bg-amber-600 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html"
+                    class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="products.html"
+                    class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="testimonials.html"
+                    class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">Testimonials</a>
+                <a href="contact.html"
+                    class="text-amber-700 hover:text-amber-900 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
     </nav>
 
-    <section id="hero"
-        class="min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-center text-bakeryCream pt-24 px-4"
-        style="background-image: url('./bakerybg.jpg');">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Welcome to Cozy Crumbs Bakery</h1>
-        <p class="text-lg md:text-xl mb-6">Freshly baked goods made with love and tradition.</p>
-        <a href="#contact"
-            class="bg-bakeryDark px-6 py-3 rounded text-bakeryCream hover:bg-bakeryBrown transition text-lg">Visit
-            Us</a>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-16 px-4 md:px-6 max-w-4xl mx-auto opacity-0 transition-opacity duration-700"
-        data-animate>
-        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-6">About Us</h2>
-        <p class="text-center text-base md:text-lg leading-relaxed mb-4">
-            At Cozy Crumbs Bakery, we've been your neighborhood bakery since 1990. Our passion for artisanal baking
-            started with a family recipe and grew into a community favorite.
-        </p>
-        <p class="text-center text-base md:text-lg leading-relaxed mb-4">
-            We bake everything fresh daily, using locally sourced ingredients and traditional methods passed down
-            through generations. From our rustic sourdoughs to sweet pastries, every bite tells a story of love and
-            craftsmanship.
-        </p>
-        <p class="text-center text-base md:text-lg leading-relaxed">
-            Our mission is to create a warm, welcoming space where families and friends gather, celebrate, and enjoy
-            delicious baked goods made with heart.
-        </p>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700 bg-bakeryproduct"
-        data-animate>
-        <h2 class="text-3xl md:text-4xl font-semibold text-bakeryCream text-center mb-10">Our Popular Treats</h2>
-        <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-            <!-- Product Card -->
-            <div
-                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
-                <img src="./bakery1.jpg" alt="Sourdough Bread" class="mx-auto mb-4 rounded w-full h-[233px]">
-                <h3 class="text-xl font-semibold mb-2">Sourdough Bread</h3>
-                <p>Crusty on the outside, soft on the inside, made fresh daily.</p>
-            </div>
-            <div
-                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300 bg-bakeryCream">
-                <img src="./bakery2.jpg" alt="Chocolate Croissant" class="mx-auto mb-4 rounded w-full h-[233px]">
-                <h3 class="text-xl font-semibold mb-2">Chocolate Croissant</h3>
-                <p>Flaky pastry filled with rich dark chocolate.</p>
-            </div>
-            <div
-                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300 bg-bakeryCream">
-                <img src="./bakery3.jpg" alt="Cinnamon Roll" class="mx-auto mb-4 rounded w-full h-[233px]">
-                <h3 class="text-xl font-semibold mb-2">Cinnamon Roll</h3>
-                <p>Swirled with cinnamon and topped with creamy icing.</p>
-            </div>
-            <div
-                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
-                <img src="./bakery4.jpg" alt="Cupcakes" class="mx-auto mb-4 rounded w-full h-[233px]">
-                <h3 class="text-xl font-semibold mb-2">Assorted Cupcakes</h3>
-                <p>A variety of flavors, perfect for any celebration.</p>
-            </div>
-            <div
-                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
-                <img src="./bakery5.jpg" alt="Lemon Tart" class="mx-auto mb-4 rounded  w-full h-[233px]">
-                <h3 class="text-xl font-semibold mb-2">Lemon Tart</h3>
-                <p>Sweet and tangy with a buttery crust and fresh lemon curd.</p>
-            </div>
-            <div
-                class="bg-white shadow rounded p-4 text-center transform transition hover:scale-105 hover:shadow-xl duration-300">
-                <img src="./bakery6.jpg" alt="Rustic Apple Pie" class="mx-auto mb-4 rounded  w-full h-[233px]">
-                <h3 class="text-xl font-semibold mb-2">Rustic Apple Pie</h3>
-                <p>Classic apple pie with spiced filling and golden flaky crust.</p>
-            </div>
+    <!-- Hero Banner -->
+    <section class="relative h-screen bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-200 flex items-center justify-center" id="hero">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative text-center text-white z-10 px-4">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 drop-shadow-lg" id="hero-title">Cozy Crumbs</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md" id="hero-subtitle">Handcrafted with love since 1990. Fresh breads, pastries, and treats baked daily with the finest ingredients.</p>
+            <button class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" id="hero-cta">
+                <i class="fas fa-shopping-bag mr-2"></i>Order Now
+            </button>
         </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 text-6xl text-amber-300 opacity-50" id="decor-1">🥖</div>
+        <div class="absolute bottom-20 right-10 text-5xl text-orange-300 opacity-50" id="decor-2">🧁</div>
+        <div class="absolute top-40 right-20 text-4xl text-yellow-300 opacity-50" id="decor-3">🥐</div>
     </section>
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700" data-animate>
-        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-10">What Our Customers Say</h2>
-        <div class="grid gap-6 grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto">
-            <div
-                class="bg-bakeryTan p-6 rounded shadow text-center transform transition hover:scale-105 hover:shadow-xl duration-300 cursor-pointer">
-                <p class="text-bakeryCream">"The best bakery in town! Always fresh and delicious!"</p>
-                <h4 class="mt-4 font-bold">- Sarah M.</h4>
+
+    <!-- Our Story Section -->
+    <section class="py-20 bg-cream-100" id="story">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-amber-800 mb-6">Our Story</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
             </div>
-            <div
-                class="bg-bakeryTan p-6 rounded shadow text-center transform transition hover:scale-105 hover:shadow-xl duration-300 cursor-pointer">
-                <p class="text-bakeryCream">"Cozy Crumbs feels like home. Their sourdough is unbeatable."</p>
-                <h4 class="mt-4 font-bold">- Daniel K.</h4>
-            </div>
-            <div
-                class="bg-bakeryTan p-6 rounded shadow text-center transform transition hover:scale-105 hover:shadow-xl duration-300 cursor-pointer">
-                <p class="text-bakeryCream ">"I love stopping by for coffee and a cinnamon roll every weekend!"</p>
-                <h4 class="mt-4 font-bold">- Lisa P.</h4>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="story-text">
+                    <p class="text-lg text-amber-700 leading-relaxed mb-6">
+                        For over three decades, Cozy Crumbs Bakery has been the heart of our community, filling homes and hearts with the irresistible aroma of freshly baked goods. What started as a small family dream in 1990 has blossomed into a beloved local institution.
+                    </p>
+                    <p class="text-lg text-amber-700 leading-relaxed mb-6">
+                        Every morning before dawn, our passionate bakers begin their craft, mixing, kneading, and shaping dough with the same dedication and love that our founders instilled from day one. We believe that great baking is more than just following recipes—it's about creating memories, one delicious bite at a time.
+                    </p>
+                    <p class="text-lg text-amber-700 leading-relaxed">
+                        From our signature sourdough to decadent chocolate croissants, every item in our bakery tells a story of tradition, quality, and the warmth of home.
+                    </p>
+                </div>
+                <div class="story-image relative">
+                    <div class="bg-gradient-to-br from-amber-300 to-orange-300 rounded-2xl p-8 text-center shadow-2xl">
+                        <i class="fas fa-bread-slice text-8xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Baking Since 1990</h3>
+                        <p class="text-amber-100">Three generations of love</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 md:px-6 opacity-0 transition-opacity duration-700 bg-bakeryproduct"
-        data-animate>
-        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-10 text-bakeryCream">Contact Us</h2>
-        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form"
-            class="flex flex-col gap-4 max-w-lg mx-auto">
-            <input type="hidden" name="access_key" value="e59c2c93-8e5b-4298-84f7-670507c3c556">
-            <input type="hidden" name="redirect" value="http://127.0.0.1:3000/Bakery/style.html">
-            <input type="text" id="name" name="name" placeholder="Your Name" required
-                class="p-3 rounded border border-bakeryBrown w-full text-white">
-            <input type="email" id="email" name="email" placeholder="Your Email" required
-                class="p-3 rounded border border-bakeryBrown w-full text-white">
-            <textarea id="message" name="message" rows="5" placeholder="Your Message" required
-                class="p-3 rounded border border-bakeryBrown w-full text-white"></textarea>
-            <button type="submit"
-                class="bg-bakeryDark text-bakeryCream py-2 rounded hover:bg-bakeryBrown transition">Send
-                Message</button>
-        </form>
-        <div class="bg-gray-300 h-48 mt-6 flex items-center justify-center">
-            <p>Google Maps Placeholder</p>
+    <!-- Top Products Preview -->
+    <section class="py-20 bg-amber-50" id="products-preview">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-amber-800 mb-6">Our Signature Treats</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+                <p class="text-xl text-amber-700 max-w-3xl mx-auto">
+                    Discover our most beloved creations, each one crafted with premium ingredients and generations of baking expertise.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-white rounded-2xl shadow-xl opacity-0 relative top-[100px] overflow-hidden transform transition-all duration-300 hover:scale-105">
+                    <div class="h-64 bg-gradient-to-br from-yellow-200 to-amber-300 flex items-center justify-center" style="background-image: url('./bakery1.jpg'); background-size: cover; background-position: center bottom;">
+                       
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-3">Artisan Sourdough</h3>
+                        <p class="text-amber-600 mb-4">Our signature 48-hour fermented sourdough with a perfect golden crust and tangy, airy interior.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-amber-700">$6.99</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition-colors duration-300">
+                                <i class="fas fa-heart mr-1"></i>Love It
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card bg-white rounded-2xl shadow-xl opacity-0 relative top-[100px] overflow-hidden transform transition-all duration-300 hover:scale-105">
+                    <div class="h-64 bg-gradient-to-br from-pink-200 to-rose-300 flex items-center justify-center" style="background-image: url('./bakery2.jpg'); background-size: cover; background-position: center bottom;">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-3">Chocolate Croissants</h3>
+                        <p class="text-amber-600 mb-4">Buttery, flaky pastry filled with rich Belgian chocolate. A perfect morning indulgence.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-amber-700">$4.50</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition-colors duration-300">
+                                <i class="fas fa-heart mr-1"></i>Love It
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card bg-white rounded-2xl shadow-xl opacity-0 relative top-[100px] overflow-hidden transform transition-all duration-300 hover:scale-105">
+                    <div class="h-64 bg-gradient-to-br from-orange-200 to-amber-300 flex items-center justify-center" style="background-image: url('./bakery3.jpg'); background-size: cover; background-position: center bottom;">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-3">Cinnamon Rolls</h3>
+                        <p class="text-amber-600 mb-4">Warm, gooey cinnamon rolls topped with our house-made cream cheese glaze.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-amber-700">$5.25</span>
+                            <button class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full transition-colors duration-300">
+                                <i class="fas fa-heart mr-1"></i>Love It
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="products.html" class="bg-amber-700 hover:bg-amber-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg inline-block">
+                    <i class="fas fa-eye mr-2"></i>View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gradient-to-br from-amber-100 to-orange-100" id="why-choose">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-amber-800 mb-6">Why Choose Cozy Crumbs?</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card text-center bg-white rounded-2xl p-8 shadow-xl transform transition-all duration-300 hover:scale-105">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-leaf text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-4">Fresh Ingredients</h3>
+                    <p class="text-amber-600 leading-relaxed">
+                        We source only the finest, locally-grown ingredients and organic flour to ensure every bite is pure, wholesome goodness.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card text-center bg-white rounded-2xl p-8 shadow-xl transform transition-all duration-300 hover:scale-105">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-4">Family Recipes</h3>
+                    <p class="text-amber-600 leading-relaxed">
+                        Our treasured family recipes have been passed down through generations, perfected with love and care over decades.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card text-center bg-white rounded-2xl p-8 shadow-xl transform transition-all duration-300 hover:scale-105">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-home text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-4">Local Love</h3>
+                    <p class="text-amber-600 leading-relaxed">
+                        As a proud community cornerstone, we support local farmers and give back to the neighborhood that has embraced us.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-amber-800 text-white" id="cta">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-bold mb-6">Visit Us Today!</h2>
+            <p class="text-xl mb-8 opacity-90">
+                Stop by our cozy bakery and experience the warmth, aroma, and taste that has made us a community favorite for over 30 years.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="cta-info bg-amber-700 rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Location
+                    </h3>
+                    <p class="text-lg">123 Main Street<br>Bakery District<br>Sweet Town, ST 12345</p>
+                </div>
+                
+                <div class="cta-info bg-amber-700 rounded-2xl p-6">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <i class="fas fa-clock mr-2"></i>Hours
+                    </h3>
+                    <div class="text-lg">
+                        <p>Mon-Fri: 6:00 AM - 7:00 PM</p>
+                        <p>Sat-Sun: 7:00 AM - 8:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-x-4">
+                <a href="contact.html" class="bg-white text-amber-800 hover:bg-amber-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg inline-block">
+                    <i class="fas fa-phone mr-2"></i>Contact Us
+                </a>
+                <button class="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-directions mr-2"></i>Get Directions
+                </button>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-bakeryBrown text-bakeryCream text-center py-6 mt-10">
-        <div class="flex items-center justify-around flex-col md:flex-row">
-            <p class=" text-xl business text-bakeryGold">Business Hours: Mon - Sat | 7am - 6pm</p>
-            <div class="links mt-2 space-x-4">
-                <a href="#" class="hover:underline text-bakeryGold">Facebook</a>
-                <a href="#" class="hover:underline text-bakeryGold">Instagram</a>
-                <a href="#" class="hover:underline text-bakeryGold">Twitter</a>
+    <footer class="bg-amber-900 text-amber-100 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-birthday-cake text-2xl text-amber-300 mr-3"></i>
+                        <span class="text-xl font-bold">Cozy Crumbs</span>
+                    </div>
+                    <p class="text-amber-200">Handcrafted with love since 1990. Your neighborhood bakery for all of life's sweet moments.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-amber-300 transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-300 transition-colors duration-300">About Us</a></li>
+                        <li><a href="products.html" class="hover:text-amber-300 transition-colors duration-300">Products</a></li>
+                        <li><a href="testimonials.html" class="hover:text-amber-300 transition-colors duration-300">Reviews</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200">Contact Info</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-CAKE</li>
+                        <li><i class="fas fa-envelope mr-2"></i>hello@cozycrumbs.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Main Street, Sweet Town</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-amber-200">Follow Us</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-amber-700 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Cozy Crumbs Bakery. All rights reserved. Made with 🤎 and lots of flour.</p>
             </div>
         </div>
-        <p class="mt-5 flex items-center justify-start pl-6">&copy; 2025 Cozy Crumbs Bakery. All rights reserved.</p>
     </footer>
 
-
-    <!-- Smooth scroll and animation JS -->
     <script>
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function (e) {
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navbar animation
+        gsap.from("#navbar", {
+            duration: 1,
+            y: -100,
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        // Hero animations
+        gsap.timeline()
+            .from("#hero-title", {
+                duration: 1.5,
+                y: 100,
+                opacity: 0,
+                ease: "power3.out",
+                delay: 0.5
+            })
+            .from("#hero-subtitle", {
+                duration: 1.2,
+                y: 50,
+                opacity: 0,
+                ease: "power2.out"
+            }, "-=0.8")
+            .from("#hero-cta", {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                ease: "power2.out"
+            }, "-=0.6");
+
+        // Decorative elements floating animation
+        gsap.to("#decor-1", {
+            duration: 3,
+            y: "20px",
+            rotation: 5,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        gsap.to("#decor-2", {
+            duration: 4,
+            y: "-15px",
+            rotation: -3,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        gsap.to("#decor-3", {
+            duration: 3.5,
+            y: "25px",
+            rotation: 8,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        // Section animations on scroll
+        gsap.from(".story-text", {
+            scrollTrigger: {
+                trigger: "#story",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            },
+            duration: 1.2,
+            x: -100,
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".story-image", {
+            scrollTrigger: {
+                trigger: "#story",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            },
+            duration: 1.2,
+            x: 100,
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        // Product cards stagger animation
+        gsap.to(".product-card", {
+            scrollTrigger: {
+                trigger: "#products-preview",
+                start: "top 80%",
+                end: "top 20%",
+                toggleActions: "play none none reverse"
+            },
+            duration: 1,
+            top:0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Feature cards animation
+        gsap.fromTo(".feature-card", {
+            y: 80,
+            opacity: 0,
+        },{
+            y: 0,
+            opacity: 1,
+            stagger: 0.3,
+            ease: "power2.out" ,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#why-choose",
+                start: "top 80%",
+                end: "top 70%",
+                toggleActions: "play none none reverse"
+            },
+        });
+
+        // CTA section animation
+        gsap.from(".cta-info", {
+            scrollTrigger: {
+                trigger: "#cta",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse"
+            },
+            duration: 1,
+            scale: 0.8,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "back.out(1.7)"
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            if (!name || !email || !message) {
-                alert('Please fill in all fields.');
-                e.preventDefault();
-            }
-        });
-
-        const elements = document.querySelectorAll('[data-animate]');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100');
-                    observer.unobserve(entry.target);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
-        }, { threshold: 0.1 });
+        });
 
-        elements.forEach(el => observer.observe(el));
+        // Add hover effects to buttons
+        document.querySelectorAll('button, .bg-amber-600, .bg-amber-700').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    duration: 0.3,
+                    scale: 1.05,
+                    ease: "power2.out"
+                });
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    duration: 0.3,
+                    scale: 1,
+                    ease: "power2.out"
+                });
+            });
+        });
     </script>
 </body>
-
 </html>
